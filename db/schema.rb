@@ -10,13 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_07_02_025109) do
+ActiveRecord::Schema[7.1].define(version: 2024_07_04_050121) do
   create_table "addresses", force: :cascade do |t|
     t.string "full_address"
     t.string "label"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.boolean "selected"
+    t.integer "bedrooms"
+    t.integer "bathrooms"
   end
 
 end

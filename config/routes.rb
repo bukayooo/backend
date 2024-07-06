@@ -1,8 +1,11 @@
 Rails.application.routes.draw do
   namespace :api do
     namespace :v1 do
-      resources :addresses, only: [:index, :create]
-      post 'addresses/:id/set_selected', to: 'addresses#set_selected'
+      resources :addresses, only: [:index, :create, :destroy] do
+        member do
+          post :set_selected
+        end
+      end
     end
   end
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
